@@ -1,0 +1,255 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0;
+    background-color: #0a192f; /* Dark navy background */
+    line-height: 1.6;
+    padding-top: 170px; /* Adjusted for combined header and nav height */
+}
+
+header {
+    background: #112240; /* Darker navy for the header */
+    color: #e0e0e0;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Navigation Styles */
+nav {
+    background: #112240; /* Darker navy for the nav background */
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixed position */
+    top: 150px; /* Adjusted to be below the header */
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center align navigation links */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 1.1em; /* Slightly smaller font size */
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    background-color: #1a2a46; /* Darker background on hover */
+    border-radius: 5px;
+}
+
+/* Adjust the padding-top of sections to account for fixed header and nav */
+section {
+    padding: 20px;
+    padding-top: 0px; /* Adjusted for fixed header and nav height */
+    margin: 20px auto;
+    background: #112240; /* Darker navy for the sections */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Adjusted to accommodate grid layout */
+}
+
+section::before {
+    content: '';
+    display: block;
+    height: 200px; /* Adjust this value to match the combined height of your header and nav bar */
+    margin-top: -150px; /* Negative margin to offset the scroll position */
+}
+
+/* Ensure the header and social icons are not hidden by the nav bar */
+header + section {
+    margin-top: 100px; /* Ensures there is space between header and section */
+}
+
+section h2 {
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #4CAF50;
+}
+
+section p, section ul, section li {
+    font-size: 1.1em; /* Slightly smaller font size for better readability */
+    margin: 10px 0;
+}
+
+section ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #112240; /* Darker navy for the footer */
+    color: #e0e0e0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Card Container and Card Styles */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1a2a46;
+    padding: 20px 20px 20px 20px; /* Adjusted the padding to remove top space */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 0; 
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #4CAF50;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+/* Hover Effects for Cards */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: #23395d; /* New background color on hover */
+}
+
+/* Contact Form Styles */
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact label {
+    margin: 10px 0 5px;
+}
+
+#contact input, #contact textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4CAF50;
+    background: #0a192f;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+#contact button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: #e0e0e0;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    section {
+        padding: 10px;
+        margin: 0; 
+        padding-top: 0; /* Removed additional padding to account for fixed header and nav */
+    }
+
+    section::before {
+        content: '';
+        display: block;
+        height: 160px; /* Adjusted based on header and nav height for tablets */
+        margin-top: -130px; /* Negative margin to ensure correct scroll position */
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2, nav ul li a, section p, section ul, section li {
+        font-size: 1em;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    section {
+        padding: 10px;
+        margin: 0; 
+        padding-top: 0; /* Removed additional padding to account for fixed header and nav */
+    }
+
+    section::before {
+        content: '';
+        display: block;
+        height: 450px; /* Adjusted for small devices */
+        margin-top: -140px; /* Negative margin to ensure correct scr  oll position */
+    }
+}
